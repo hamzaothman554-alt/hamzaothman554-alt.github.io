@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="AI and n8n automation for real estate agencies by Hamza Othman">
+<title>AI Office for Real Estate</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: a single deed-like column; hero, the problem, a channel map, features, how it works, contact. Language switch on the hash (#ar / #en). */
+:root{
+  --bg:#0c0b09; --surface:#17150f; --ink:#f2ede3; --muted:#a9a192; --line:#2c2820;
+  --brass:#d9ad45; --brass-soft:#241f12; --teal:#d9ad45; --teal-soft:#2a2414;
+  --display:"Readex Pro","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --body:"IBM Plex Sans Arabic","Readex Pro",system-ui,sans-serif;
+  color-scheme:dark;
+}
+.hero{background:radial-gradient(120% 90% at 85% 0%,#2a2210 0%,transparent 60%)}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:880px;margin:0 auto}
+.bar{display:flex;justify-content:space-between;align-items:center;padding-block:18px;gap:12px}
+.mark{font-family:var(--display);font-weight:600;letter-spacing:.02em;color:var(--teal)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang a{padding:6px 14px;text-decoration:none;color:var(--muted);font-size:14px;font-family:var(--display)}
+.lang a[aria-current="true"]{background:var(--teal);color:var(--bg)}
+.lang a:focus-visible{outline:2px solid var(--brass);outline-offset:-2px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.25;margin:0}
+h1{font-size:clamp(30px,5.4vw,48px);font-weight:700}
+h2{font-size:24px;font-weight:600;margin-bottom:14px}
+h3{font-size:17px;font-weight:600}
+p{margin:0}
+.eyebrow{font-family:var(--display);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);font-weight:600}
+.hero{padding-block:36px 28px;display:grid;gap:16px;border-bottom:1px solid var(--line)}
+.lede{font-size:19px;color:var(--muted);max-width:62ch}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.fact{background:var(--brass-soft);color:var(--ink);border-radius:8px;padding:8px 14px;font-size:14px;font-family:var(--display)}
+.fact b{color:var(--brass);font-variant-numeric:tabular-nums}
+section{padding-block:34px;border-bottom:1px solid var(--line)}
+.pain{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.pain div{padding:16px;border-inline-start:3px solid var(--brass);background:var(--surface)}
+.map{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}
+.col{display:grid;gap:10px;min-width:0}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-family:var(--display);font-size:15px}
+.chip small{display:block;color:var(--muted);font-family:var(--body);font-size:13px}
+.core{background:var(--teal);color:var(--bg);border-radius:14px;padding:22px 18px;text-align:center;font-family:var(--display);max-width:220px}
+.core b{display:block;font-size:18px}
+.core span{font-size:13px;opacity:.85}
+.arrow{color:var(--brass);font-size:22px;text-align:center}
+@media (max-width:640px){.map{grid-template-columns:1fr}.core{max-width:none}.arrow{transform:rotate(90deg)}}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px 28px}
+.feat div{display:grid;gap:4px}
+.feat p{color:var(--muted);font-size:15px}
+ol.steps{margin:0;padding-inline-start:22px;display:grid;gap:10px}
+ol.steps li::marker{color:var(--brass);font-family:var(--display);font-weight:600}
+.convo{display:grid;gap:8px;max-width:440px;margin-top:18px}
+.msg{padding:10px 14px;border-radius:14px;font-size:15px;max-width:85%}
+.msg.in{background:var(--surface);border:1px solid var(--line);justify-self:start}
+.msg.out{background:var(--teal-soft);justify-self:end}
+.msg .who{display:block;font-size:12px;color:var(--muted);font-family:var(--display)}
+.about{display:grid;gap:10px}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:12px;margin-top:34px}
+.contact .line{font-family:var(--display);font-size:18px;user-select:all;color:var(--teal)}
+.note{color:var(--muted);font-size:13px}
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:2px}
+.stat b{font-family:var(--display);font-size:28px;color:var(--teal);font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{color:var(--muted);font-size:14px}
+video{width:100%;max-width:360px;margin-inline:auto;aspect-ratio:9/16;border-radius:14px;border:1px solid var(--line);background:#000;display:block;margin-top:16px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:6px}
+.shots figure{margin:0;display:grid;gap:6px}
+.shots a{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#0b0b0b}
+.shots a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.shots img{width:100%;height:auto;display:block;aspect-ratio:1895/910;object-fit:cover;object-position:top}
+.shots figcaption{font-size:14px;color:var(--muted)}
+.contact a{color:inherit}
+dialog.lb{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh}
+dialog.lb::backdrop{background:rgba(0,0,0,.85)}
+dialog.lb img{max-width:96vw;max-height:88vh;display:block;border-radius:8px}
+dialog.lb button{display:block;margin:8px auto 0;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 18px;font-family:var(--display);cursor:pointer}
+[lang="en"]{direction:ltr;text-align:left}
+[lang="ar"]{direction:rtl;text-align:right}
+@media (prefers-reduced-motion:no-preference){.core{transition:transform .3s}.core:hover{transform:scale(1.02)}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <div class="bar" dir="ltr">
+    <span class="mark">AI Office · n8n</span>
+    <nav class="lang" aria-label="Language">
+      <a href="#ar" id="l-ar">العربية</a>
+      <a href="#en" id="l-en">English</a>
+    </nav>
+  </div>
+
+  <!-- ARABIC -->
+  <main id="ar" lang="ar">
+    <header class="hero">
+      <span class="eyebrow">دراسة حالة · الخير للأعمال العقارية</span>
+      <h1>مكتب عقاري بيرد على كل زبون، على كل منصة، بثواني</h1>
+      <p class="lede">نظام كامل بنيته لمكتب عقاري: العرض بينحط مرة وحدة، وبينزل لحالو عالموقع وفيسبوك وتيليغرام، ومساعد ذكاء اصطناعي بيرد على الزباين بالواتساب والمسنجر والتعليقات وبوت التيليغرام.</p>
+      <div class="facts">
+        <span class="fact"><b>4</b> قنوات رد بمساعد واحد</span>
+        <span class="fact">نشر عرض <b>كل ساعة</b> من 9 الصبح لـ 10 المسا</span>
+        <span class="fact"><b>6</b> منشورات دورية تلقائية</span>
+        <span class="fact"><b>66</b> تحديث منشور</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>المشكلة</h2>
+      <div class="pain">
+        <div>الرسايل جاية من واتساب وفيسبوك والمسنجر وتيليغرام، والموظفين ما بيلحقوا.</div>
+        <div>الزبون يلي بيستنى ساعات بيروح لمكتب تاني.</div>
+        <div>كل عرض لازم ينكتب وينشر بإيد على كل منصة لحالها.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>كيف القطع مربوطة ببعض</h2>
+      <div class="map">
+        <div class="col">
+          <div class="chip">واتساب<small>ترحيب، ردود، أخبار لأصحاب العقارات</small></div>
+          <div class="chip">فيسبوك والمسنجر<small>رد على كل تعليق وكل رسالة</small></div>
+          <div class="chip">بوت تيليغرام<small>تصفح بالأزرار أو بالكتابة</small></div>
+        </div>
+        <div class="arrow" aria-hidden="true">⇄</div>
+        <div class="core"><b>قاعدة عروض واحدة</b><span>ومساعد ذكي واحد بيفهم الكتابة الحرة وبيدوّر بالعروض الحقيقية</span></div>
+      </div>
+      <div class="map" style="margin-top:14px">
+        <div class="col">
+          <div class="chip">الموقع<small>فلاتر، صفحة لكل عرض، فورم «اعرض عقارك»</small></div>
+          <div class="chip">لوحة الإدارة<small>العروض، الطلبات، جدول النشر، الإحصائيات</small></div>
+        </div>
+        <div class="arrow" aria-hidden="true">⇄</div>
+        <div class="col">
+          <div class="chip">صفحة فيسبوك وقناة تيليغرام<small>نشر تلقائي، و«تم البيع» لحالها لما ينشال العرض</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>شو بيعمل النظام</h2>
+      <div class="feat">
+        <div><h3>رد فوري على التعليقات</h3><p>اللي بيعلّق «سعر» بيوصلو السعر والتفاصيل والرابط عالخاص، والتعليق بيرفع وصول البوست.</p></div>
+        <div><h3>مساعد بيحكي لهجة الزبون</h3><p>بيفهم «شقة غرفتين بمنطقة كذا» وبيبعت العروض المناسبة، وبيسكت إذا رد موظف بإيدو.</p></div>
+        <div><h3>«خبّرني»</h3><p>إذا ما في عرض مناسب، بيحفظ طلب الزبون وبيبعتلو أول ما ينزل شي على قياسه.</p></div>
+        <div><h3>أصحاب العقارات</h3><p>فورم لعرض العقار، وتأكيد عالواتساب، وأخبار تلقائية لما ينقبل أو ينحجز أو ينباع.</p></div>
+        <div><h3>محتوى أسبوعي جاهز</h3><p>أحدث العروض، عروض مميزة، «شو بتجيب ميزانيتك؟»، أسعار المناطق، ونصيحة. كلو بيطلع لحالو.</p></div>
+        <div><h3>قياس</h3><p>عدد زوار الموقع ومستخدمي البوت ومتابعي القناة، وروابط معلّمة من فيسبوك.</p></div>
+      </div>
+      <div class="convo" aria-label="مثال محادثة">
+        <div class="msg in"><span class="who">زبون · واتساب · 11:40 بالليل</span>بدي شقة إيجار غرفتين مفروشة، شو في؟</div>
+        <div class="msg out"><span class="who">المساعد · بعد ثواني</span>في عندنا 3 عروض مناسبة. هي أول واحدة: شقة غرفتين وصالون، مفروشة، طابق تالت. بتحب ابعتلك صورها؟</div>
+      </div>
+      <p class="note" style="margin-top:8px">مثال توضيحي لطريقة الرد.</p>
+    </section>
+
+    <section>
+      <h2>النظام شغّال فعلاً</h2>
+      <p>هاد مكتب «الخير للأعمال العقارية» باللاذقية، مشروعي أنا، وشغّال عليه النظام كامل. الأرقام من لوحة الإدارة مباشرة.</p>
+      <video controls preload="metadata" playsinline poster="img/promo-poster.jpg"><source src="promo.mp4" type="video/mp4"></video>
+      <div class="proof">
+        <div class="stat"><b>366</b><span>زائر للموقع بآخر 30 يوم</span></div>
+        <div class="stat"><b>265</b><span>زائر بهالأسبوع</span></div>
+        <div class="stat"><b>74%</b><span>من الزوار جايين من فيسبوك</span></div>
+        <div class="stat"><b>15</b><span>مستخدم لبوت التيليغرام</span></div>
+        <div class="stat"><b>224</b><span>رسالة وضغطة زر عالبوت</span></div>
+        <div class="stat"><b>41</b><span>عرض منشور، بينزلوا لحالهم</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>من جوّا النظام</h2>
+      <div class="shots">
+        <figure><a href="img/public-home.webp" class="zoom"><img src="img/public-home.webp" alt="الموقع: كل العروض بمكان واحد مع فلاتر ومساعد ذكي" loading="lazy" width="1895" height="910"></a><figcaption>الموقع: كل العروض بمكان واحد مع فلاتر ومساعد ذكي</figcaption></figure>
+        <figure><a href="img/public-listings.webp" class="zoom"><img src="img/public-listings.webp" alt="بطاقة لكل عرض مع زر اتصال وواتساب ومشاركة" loading="lazy" width="1895" height="910"></a><figcaption>بطاقة لكل عرض مع زر اتصال وواتساب ومشاركة</figcaption></figure>
+        <figure><a href="img/admin-listings.webp" class="zoom"><img src="img/admin-listings.webp" alt="لوحة الإدارة: 41 عرض بجدول واحد" loading="lazy" width="1895" height="910"></a><figcaption>لوحة الإدارة: 41 عرض بجدول واحد</figcaption></figure>
+        <figure><a href="img/admin-posting.webp" class="zoom"><img src="img/admin-posting.webp" alt="جدول النشر: عرض كل ساعة من 9 الصبح لـ 10 المسا" loading="lazy" width="1895" height="910"></a><figcaption>جدول النشر: عرض كل ساعة من 9 الصبح لـ 10 المسا</figcaption></figure>
+        <figure><a href="img/admin-posting-2.webp" class="zoom"><img src="img/admin-posting-2.webp" alt="منشورات أسبوعية جاهزة بتطلع لحالها" loading="lazy" width="1895" height="910"></a><figcaption>منشورات أسبوعية جاهزة بتطلع لحالها</figcaption></figure>
+        <figure><a href="img/admin-visitors.webp" class="zoom"><img src="img/admin-visitors.webp" alt="الزوار: 366 بآخر 30 يوم" loading="lazy" width="1895" height="910"></a><figcaption>الزوار: 366 بآخر 30 يوم</figcaption></figure>
+        <figure><a href="img/admin-visitors-2.webp" class="zoom"><img src="img/admin-visitors-2.webp" alt="من وين إجو الزوار، وأكتر العروض مشاهدة" loading="lazy" width="1895" height="910"></a><figcaption>من وين إجو الزوار، وأكتر العروض مشاهدة</figcaption></figure>
+        <figure><a href="img/admin-telegram.webp" class="zoom"><img src="img/admin-telegram.webp" alt="بوت التيليغرام: 15 مستخدم و224 تفاعل" loading="lazy" width="1895" height="910"></a><figcaption>بوت التيليغرام: 15 مستخدم و224 تفاعل</figcaption></figure>
+        <figure><a href="img/admin-notify-requests.webp" class="zoom"><img src="img/admin-notify-requests.webp" alt="طلبات «خبّرني» يلي البوت بيتابعها لحالو" loading="lazy" width="1895" height="910"></a><figcaption>طلبات «خبّرني» يلي البوت بيتابعها لحالو</figcaption></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>كيف منشتغل سوا</h2>
+      <ol class="steps">
+        <li>مكالمة 15 دقيقة لنفهم شغل مكتبك وقنواتك.</li>
+        <li>بركّب النظام على اسم مكتبك ولوغو تبعك ولهجة زباينك، خلال 1 لـ 2 أسبوع.</li>
+        <li>أسبوع تجربة مع فريقك وتعديلات.</li>
+        <li>صيانة شهرية واستضافة وتطوير مستمر.</li>
+      </ol>
+    </section>
+
+    <section class="about">
+      <h2>مين أنا</h2>
+      <p>مهندس معلوماتية، اختصاص هندسة برمجيات ونظم معلومات. ببني أنظمة أتمتة وذكاء اصطناعي بـ n8n وLaravel وReact، ومربوطة بواتساب وفيسبوك وتيليغرام.</p>
+    </section>
+
+    <div class="contact">
+      <h2>بدك نفس النظام لمكتبك؟</h2>
+      <p class="line">حمزة عثمان · <a href="https://wa.me/963937961072" target="_blank" rel="noopener" dir="ltr">واتساب +963 937 961 072</a> · <a href="mailto:hamza.othman554@gmail.com">hamza.othman554@gmail.com</a></p>
+      <p class="note">ابعت رسالة، ومنحدد مكالمة قصيرة لنورجيك النظام شغال.</p>
+    </div>
+  </main>
+
+  <!-- ENGLISH -->
+  <main id="en" lang="en" hidden>
+    <header class="hero">
+      <span class="eyebrow">Case study · Al-Khair Real Estate</span>
+      <h1>A real estate office that answers every lead, on every channel, in seconds</h1>
+      <p class="lede">A complete system built for a real estate agency: a listing is entered once and published automatically to the website, Facebook and Telegram, while an AI assistant answers clients on WhatsApp, Messenger, Facebook comments and a Telegram bot.</p>
+      <div class="facts">
+        <span class="fact"><b>4</b> channels, one assistant</span>
+        <span class="fact">A listing posted <b>every hour</b>, 9 am to 10 pm</span>
+        <span class="fact"><b>6</b> recurring auto-posts</span>
+        <span class="fact"><b>66</b> shipped releases</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>The problem</h2>
+      <div class="pain">
+        <div>Messages arrive on WhatsApp, Facebook, Messenger and Telegram, and the team can't keep up.</div>
+        <div>A client left waiting for hours goes to the next agency.</div>
+        <div>Every listing has to be written and posted by hand on each platform.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>How the pieces connect</h2>
+      <div class="map">
+        <div class="col">
+          <div class="chip">WhatsApp<small>Welcome, answers, updates for property owners</small></div>
+          <div class="chip">Facebook &amp; Messenger<small>A reply to every comment and message</small></div>
+          <div class="chip">Telegram bot<small>Browse by buttons or free text</small></div>
+        </div>
+        <div class="arrow" aria-hidden="true">⇄</div>
+        <div class="core"><b>One listings database</b><span>and one AI assistant that understands free text and searches real listings</span></div>
+      </div>
+      <div class="map" style="margin-top:14px">
+        <div class="col">
+          <div class="chip">Website<small>Filters, a page per listing, "List your property" form</small></div>
+          <div class="chip">Admin panel<small>Listings, requests, posting schedule, stats</small></div>
+        </div>
+        <div class="arrow" aria-hidden="true">⇄</div>
+        <div class="col">
+          <div class="chip">Facebook page &amp; Telegram channel<small>Auto-posting, and "Sold" added when a listing closes</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What it does</h2>
+      <div class="feat">
+        <div><h3>Instant comment replies</h3><p>Anyone who comments "price" gets the price, details and link in a private message, and the comments lift the post's reach.</p></div>
+        <div><h3>An assistant in the client's dialect</h3><p>It understands "2-bedroom flat in this area", sends matching listings, and steps back when a staff member replies.</p></div>
+        <div><h3>"Notify me"</h3><p>When nothing matches, it saves the request and messages the client as soon as a fitting listing goes live.</p></div>
+        <div><h3>Property owners</h3><p>A form to submit a property, WhatsApp confirmation, and automatic updates when it's approved, reserved or sold.</p></div>
+        <div><h3>A weekly content calendar</h3><p>Latest listings, featured listings, "What your budget gets", prices by area, and tips, all posted automatically.</p></div>
+        <div><h3>Measurement</h3><p>Website visitors, bot users and channel followers, with tagged links from Facebook.</p></div>
+      </div>
+      <div class="convo" aria-label="Example conversation">
+        <div class="msg in"><span class="who">Client · WhatsApp · 11:40 pm</span>Looking for a furnished 2-bedroom to rent, what do you have?</div>
+        <div class="msg out"><span class="who">Assistant · seconds later</span>We have 3 matching listings. Here's the first: 2 bedrooms and a living room, furnished, 3rd floor. Shall I send the photos?</div>
+      </div>
+      <p class="note" style="margin-top:8px">Illustrative example of a reply.</p>
+    </section>
+
+    <section>
+      <h2>It's running right now</h2>
+      <p>This is Al-Khair Real Estate in Latakia, my own agency project, running the full system. The numbers come straight from its admin panel.</p>
+      <video controls preload="metadata" playsinline poster="img/promo-poster.jpg"><source src="promo.mp4" type="video/mp4"></video>
+      <div class="proof">
+        <div class="stat"><b>366</b><span>website visitors in 30 days</span></div>
+        <div class="stat"><b>265</b><span>visitors this week</span></div>
+        <div class="stat"><b>74%</b><span>of visitors come from Facebook</span></div>
+        <div class="stat"><b>15</b><span>Telegram bot users</span></div>
+        <div class="stat"><b>224</b><span>bot messages and button taps</span></div>
+        <div class="stat"><b>41</b><span>listings, published automatically</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Inside the system</h2>
+      <div class="shots">
+        <figure><a href="img/public-home.webp" class="zoom"><img src="img/public-home.webp" alt="Website: every listing in one place, with filters and an AI assistant" loading="lazy" width="1895" height="910"></a><figcaption>Website: every listing in one place, with filters and an AI assistant</figcaption></figure>
+        <figure><a href="img/public-listings.webp" class="zoom"><img src="img/public-listings.webp" alt="A card per listing with call, WhatsApp and share buttons" loading="lazy" width="1895" height="910"></a><figcaption>A card per listing with call, WhatsApp and share buttons</figcaption></figure>
+        <figure><a href="img/admin-listings.webp" class="zoom"><img src="img/admin-listings.webp" alt="Admin panel: 41 listings in one table" loading="lazy" width="1895" height="910"></a><figcaption>Admin panel: 41 listings in one table</figcaption></figure>
+        <figure><a href="img/admin-posting.webp" class="zoom"><img src="img/admin-posting.webp" alt="Posting schedule: one listing every hour, 9 am to 10 pm" loading="lazy" width="1895" height="910"></a><figcaption>Posting schedule: one listing every hour, 9 am to 10 pm</figcaption></figure>
+        <figure><a href="img/admin-posting-2.webp" class="zoom"><img src="img/admin-posting-2.webp" alt="Ready-made weekly posts that publish themselves" loading="lazy" width="1895" height="910"></a><figcaption>Ready-made weekly posts that publish themselves</figcaption></figure>
+        <figure><a href="img/admin-visitors.webp" class="zoom"><img src="img/admin-visitors.webp" alt="Visitors: 366 in the last 30 days" loading="lazy" width="1895" height="910"></a><figcaption>Visitors: 366 in the last 30 days</figcaption></figure>
+        <figure><a href="img/admin-visitors-2.webp" class="zoom"><img src="img/admin-visitors-2.webp" alt="Where visitors come from, and the most viewed listings" loading="lazy" width="1895" height="910"></a><figcaption>Where visitors come from, and the most viewed listings</figcaption></figure>
+        <figure><a href="img/admin-telegram.webp" class="zoom"><img src="img/admin-telegram.webp" alt="Telegram bot: 15 users and 224 interactions" loading="lazy" width="1895" height="910"></a><figcaption>Telegram bot: 15 users and 224 interactions</figcaption></figure>
+        <figure><a href="img/admin-notify-requests.webp" class="zoom"><img src="img/admin-notify-requests.webp" alt=""Notify me" requests the bot follows up on its own" loading="lazy" width="1895" height="910"></a><figcaption>"Notify me" requests the bot follows up on its own</figcaption></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>How we work together</h2>
+      <ol class="steps">
+        <li>A 15-minute call to understand your office and channels.</li>
+        <li>I set the system up with your name, logo and your clients' language, in 1 to 2 weeks.</li>
+        <li>A trial week with your team, plus adjustments.</li>
+        <li>Monthly maintenance, hosting and ongoing improvements.</li>
+      </ol>
+    </section>
+
+    <section class="about">
+      <h2>About me</h2>
+      <p>Software engineer specialising in software engineering and information systems. I build automation and AI systems with n8n, Laravel and React, connected to WhatsApp, Facebook and Telegram.</p>
+    </section>
+
+    <div class="contact">
+      <h2>Want the same system for your agency?</h2>
+      <p class="line">Hamza Othman · <a href="https://wa.me/963937961072" target="_blank" rel="noopener">WhatsApp +963 937 961 072</a> · <a href="mailto:hamza.othman554@gmail.com">hamza.othman554@gmail.com</a></p>
+      <p class="note">Send a message and we'll book a short call to show you the system running.</p>
+    </div>
+  </main>
+</div>
+
+<script>
+(function(){
+  var ar=document.getElementById('ar'), en=document.getElementById('en');
+  var la=document.getElementById('l-ar'), le=document.getElementById('l-en');
+  function show(){
+    var isEn = location.hash === '#en';
+    en.hidden = !isEn; ar.hidden = isEn;
+    la.setAttribute('aria-current', String(!isEn));
+    le.setAttribute('aria-current', String(isEn));
+    document.documentElement.lang = isEn ? 'en' : 'ar';
+  }
+  window.addEventListener('hashchange', show);
+  show();
+})();
+</script>
+<dialog class="lb" id="lb"><img alt=""><button type="button">✕</button></dialog>
+<script>
+(function(){
+  var d=document.getElementById('lb'), im=d.querySelector('img');
+  document.querySelectorAll('a.zoom').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;d.showModal();});
+  });
+  d.addEventListener('click',function(){d.close();});
+})();
+</script>
+
+</body>
+</html>
