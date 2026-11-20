@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="AI and n8n automation for real estate agencies by Hamza Othman">
-<title>AI Office for Real Estate</title>
-
+<title>Hamza Othman · AI Automation</title>
+<meta name="description" content="AI assistants and n8n automation for businesses by Hamza Othman">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
 <style>
 /* Layout: a single deed-like column; hero, the problem, a channel map, features, how it works, contact. Language switch on the hash (#ar / #en). */
@@ -83,278 +82,104 @@ dialog.lb button{display:block;margin:8px auto 0;background:var(--surface);color
 [lang="en"]{direction:ltr;text-align:left}
 [lang="ar"]{direction:rtl;text-align:right}
 @media (prefers-reduced-motion:no-preference){.core{transition:transform .3s}.core:hover{transform:scale(1.02)}}
+
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.svc div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:6px;align-content:start}
+.svc p{color:var(--muted);font-size:15px}
+.svc .ic{font-size:22px;line-height:1}
+.case{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;color:inherit}
+.case:hover{border-color:var(--brass)}
+.case img{width:100%;height:auto;aspect-ratio:1895/910;object-fit:cover;object-position:top;border-radius:10px;display:block;border:1px solid var(--line)}
+.case .go{color:var(--brass);font-family:var(--display);font-weight:600}
+.mini{display:flex;flex-wrap:wrap;gap:8px;margin-block:4px 8px}
+.ind{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.ind div{border-inline-start:3px solid var(--brass);padding:10px 14px;background:var(--surface)}
+.ind small{display:block;color:var(--muted);font-size:13px}
+.price{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.price div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:4px}
+.price b{font-family:var(--display);font-size:24px;color:var(--brass)}
+.price p{color:var(--muted);font-size:14px}
+.tag{font-size:12px;font-family:var(--display);color:var(--bg);background:var(--brass);border-radius:999px;padding:1px 8px;margin-inline-start:6px}
+@media (max-width:700px){.case{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
-
 <div class="wrap">
-  <div class="bar" dir="ltr">
-    <span class="mark">AI Office · n8n</span>
-    <nav class="lang" aria-label="Language">
-      <a href="#ar" id="l-ar">العربية</a>
-      <a href="#en" id="l-en">English</a>
-    </nav>
-  </div>
-
-  <!-- ARABIC -->
-  <main id="ar" lang="ar">
-    <header class="hero">
-      <span class="eyebrow">دراسة حالة · الخير للأعمال العقارية</span>
-      <h1>مكتب عقاري بيرد على كل زبون، على كل منصة، بثواني</h1>
-      <p class="lede">نظام كامل بنيته لمكتب عقاري: العرض بينحط مرة وحدة، وبينزل لحالو عالموقع وفيسبوك وتيليغرام، ومساعد ذكاء اصطناعي بيرد على الزباين بالواتساب والمسنجر والتعليقات وبوت التيليغرام.</p>
-      <div class="facts">
-        <span class="fact"><b>4</b> قنوات رد بمساعد واحد</span>
-        <span class="fact">نشر عرض <b>كل ساعة</b> من 9 الصبح لـ 10 المسا</span>
-        <span class="fact"><b>6</b> منشورات دورية تلقائية</span>
-        <span class="fact"><b>763</b> تعليق انرد عليه تلقائياً</span>
-      </div>
-    </header>
-
-    <section>
-      <h2>المشكلة</h2>
-      <div class="pain">
-        <div>الرسايل جاية من واتساب وفيسبوك والمسنجر وتيليغرام، والموظفين ما بيلحقوا.</div>
-        <div>الزبون يلي بيستنى ساعات بيروح لمكتب تاني.</div>
-        <div>كل عرض لازم ينكتب وينشر بإيد على كل منصة لحالها.</div>
-      </div>
-    </section>
-
-    <section>
-      <h2>كيف القطع مربوطة ببعض</h2>
-      <div class="map">
-        <div class="col">
-          <div class="chip">واتساب<small>ترحيب، ردود، أخبار لأصحاب العقارات</small></div>
-          <div class="chip">فيسبوك والمسنجر<small>رد على كل تعليق وكل رسالة</small></div>
-          <div class="chip">بوت تيليغرام<small>تصفح بالأزرار أو بالكتابة</small></div>
-        </div>
-        <div class="arrow" aria-hidden="true">⇄</div>
-        <div class="core"><b>قاعدة عروض واحدة</b><span>ومساعد ذكي واحد بيفهم الكتابة الحرة وبيدوّر بالعروض الحقيقية</span></div>
-      </div>
-      <div class="map" style="margin-top:14px">
-        <div class="col">
-          <div class="chip">الموقع<small>فلاتر، صفحة لكل عرض، فورم «اعرض عقارك»</small></div>
-          <div class="chip">لوحة الإدارة<small>العروض، الطلبات، جدول النشر، الإحصائيات</small></div>
-        </div>
-        <div class="arrow" aria-hidden="true">⇄</div>
-        <div class="col">
-          <div class="chip">صفحة فيسبوك وقناة تيليغرام<small>نشر تلقائي، و«تم البيع» لحالها لما ينشال العرض</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>شو بيعمل النظام</h2>
-      <div class="feat">
-        <div><h3>رد فوري على التعليقات</h3><p>اللي بيعلّق «سعر» بيوصلو السعر والتفاصيل والرابط عالخاص، والتعليق بيرفع وصول البوست.</p></div>
-        <div><h3>مساعد بيحكي لهجة الزبون</h3><p>بيفهم «شقة غرفتين بمنطقة كذا» وبيبعت العروض المناسبة، وبيسكت إذا رد موظف بإيدو.</p></div>
-        <div><h3>«خبّرني»</h3><p>إذا ما في عرض مناسب، بيحفظ طلب الزبون وبيبعتلو أول ما ينزل شي على قياسه.</p></div>
-        <div><h3>أصحاب العقارات</h3><p>فورم لعرض العقار، وتأكيد عالواتساب، وأخبار تلقائية لما ينقبل أو ينحجز أو ينباع.</p></div>
-        <div><h3>محتوى أسبوعي جاهز</h3><p>أحدث العروض، عروض مميزة، «شو بتجيب ميزانيتك؟»، أسعار المناطق، ونصيحة. كلو بيطلع لحالو.</p></div>
-        <div><h3>قياس</h3><p>عدد زوار الموقع ومستخدمي البوت ومتابعي القناة، وروابط معلّمة من فيسبوك.</p></div>
-      </div>
-      <div class="convo" aria-label="مثال محادثة">
-        <div class="msg in"><span class="who">زبون · واتساب · 11:40 بالليل</span>بدي شقة إيجار غرفتين مفروشة، شو في؟</div>
-        <div class="msg out"><span class="who">المساعد · بعد ثواني</span>في عندنا 3 عروض مناسبة. هي أول واحدة: شقة غرفتين وصالون، مفروشة، طابق تالت. بتحب ابعتلك صورها؟</div>
-      </div>
-      <p class="note" style="margin-top:8px">مثال توضيحي لطريقة الرد.</p>
-    </section>
-
-    <section>
-      <h2>النظام شغّال فعلاً</h2>
-      <p>هاد مكتب «الخير للأعمال العقارية» باللاذقية، مشروعي أنا، وشغّال عليه النظام كامل. الأرقام من لوحة الإدارة مباشرة.</p>
-      <video controls preload="metadata" playsinline poster="img/promo-poster.jpg"><source src="promo.mp4" type="video/mp4"></video>
-      <div class="proof">
-        <div class="stat"><b>763</b><span>تعليق فيسبوك رد عليهن البوت</span></div>
-        <div class="stat"><b>69</b><span>محادثة مسنجر رد عليها المساعد</span></div>
-        <div class="stat"><b>366</b><span>زائر للموقع بآخر 30 يوم</span></div>
-                <div class="stat"><b>74%</b><span>من الزوار جايين من فيسبوك</span></div>
-        <div class="stat"><b>15</b><span>مستخدم لبوت التيليغرام</span></div>
-        <div class="stat"><b>224</b><span>رسالة وضغطة زر عالبوت</span></div>
-        <div class="stat"><b>41</b><span>عرض منشور، بينزلوا لحالهم</span></div>
-      </div>
-    </section>
-
-    <section>
-      <h2>من جوّا النظام</h2>
-      <div class="shots">
-        <figure><a href="img/public-home.webp" class="zoom"><img src="img/public-home.webp" alt="الموقع: كل العروض بمكان واحد مع فلاتر ومساعد ذكي" loading="lazy" width="1895" height="910"></a><figcaption>الموقع: كل العروض بمكان واحد مع فلاتر ومساعد ذكي</figcaption></figure>
-        <figure><a href="img/public-listings.webp" class="zoom"><img src="img/public-listings.webp" alt="بطاقة لكل عرض مع زر اتصال وواتساب ومشاركة" loading="lazy" width="1895" height="910"></a><figcaption>بطاقة لكل عرض مع زر اتصال وواتساب ومشاركة</figcaption></figure>
-        <figure><a href="img/admin-facebook.webp" class="zoom"><img src="img/admin-facebook.webp" alt="إعدادات فيسبوك: البوت رد على 763 تعليق والمساعد على 69 محادثة" loading="lazy" width="1895" height="910"></a><figcaption>إعدادات فيسبوك: البوت رد على 763 تعليق والمساعد على 69 محادثة</figcaption></figure>
-        <figure><a href="img/admin-facebook.webp" class="zoom"><img src="img/admin-facebook.webp" alt="Facebook settings: 763 comments and 69 Messenger chats answered" loading="lazy" width="1895" height="910"></a><figcaption>Facebook settings: 763 comments and 69 Messenger chats answered</figcaption></figure>
-        <figure><a href="img/admin-listings.webp" class="zoom"><img src="img/admin-listings.webp" alt="لوحة الإدارة: 41 عرض بجدول واحد" loading="lazy" width="1895" height="910"></a><figcaption>لوحة الإدارة: 41 عرض بجدول واحد</figcaption></figure>
-        <figure><a href="img/admin-posting.webp" class="zoom"><img src="img/admin-posting.webp" alt="جدول النشر: عرض كل ساعة من 9 الصبح لـ 10 المسا" loading="lazy" width="1895" height="910"></a><figcaption>جدول النشر: عرض كل ساعة من 9 الصبح لـ 10 المسا</figcaption></figure>
-        <figure><a href="img/admin-posting-2.webp" class="zoom"><img src="img/admin-posting-2.webp" alt="منشورات أسبوعية جاهزة بتطلع لحالها" loading="lazy" width="1895" height="910"></a><figcaption>منشورات أسبوعية جاهزة بتطلع لحالها</figcaption></figure>
-        <figure><a href="img/admin-visitors.webp" class="zoom"><img src="img/admin-visitors.webp" alt="الزوار: 366 بآخر 30 يوم" loading="lazy" width="1895" height="910"></a><figcaption>الزوار: 366 بآخر 30 يوم</figcaption></figure>
-        <figure><a href="img/admin-visitors-2.webp" class="zoom"><img src="img/admin-visitors-2.webp" alt="من وين إجو الزوار، وأكتر العروض مشاهدة" loading="lazy" width="1895" height="910"></a><figcaption>من وين إجو الزوار، وأكتر العروض مشاهدة</figcaption></figure>
-        <figure><a href="img/admin-telegram.webp" class="zoom"><img src="img/admin-telegram.webp" alt="بوت التيليغرام: 15 مستخدم و224 تفاعل" loading="lazy" width="1895" height="910"></a><figcaption>بوت التيليغرام: 15 مستخدم و224 تفاعل</figcaption></figure>
-        <figure><a href="img/admin-notify-requests.webp" class="zoom"><img src="img/admin-notify-requests.webp" alt="طلبات «خبّرني» يلي البوت بيتابعها لحالو" loading="lazy" width="1895" height="910"></a><figcaption>طلبات «خبّرني» يلي البوت بيتابعها لحالو</figcaption></figure>
-      </div>
-    </section>
-
-    <section>
-      <h2>كيف منشتغل سوا</h2>
-      <ol class="steps">
-        <li>مكالمة 15 دقيقة لنفهم شغل مكتبك وقنواتك.</li>
-        <li>بركّب النظام على اسم مكتبك ولوغو تبعك ولهجة زباينك، خلال 1 لـ 2 أسبوع.</li>
-        <li>أسبوع تجربة مع فريقك وتعديلات.</li>
-        <li>صيانة شهرية واستضافة وتطوير مستمر.</li>
-      </ol>
-    </section>
-
-    <section class="about">
-      <h2>مين أنا</h2>
-      <p>مهندس معلوماتية، اختصاص هندسة برمجيات ونظم معلومات. ببني أنظمة أتمتة وذكاء اصطناعي بـ n8n وLaravel وReact، ومربوطة بواتساب وفيسبوك وتيليغرام.</p>
-    </section>
-
-    <div class="contact">
-      <h2>بدك نفس النظام لمكتبك؟</h2>
-      <p class="line">حمزة عثمان · <a href="https://wa.me/963937961072" target="_blank" rel="noopener" dir="ltr">واتساب +963 937 961 072</a> · <a href="mailto:hamza.othman554@gmail.com">hamza.othman554@gmail.com</a></p>
-      <p class="note">ابعت رسالة، ومنحدد مكالمة قصيرة لنورجيك النظام شغال.</p>
-    </div>
-  </main>
-
-  <!-- ENGLISH -->
-  <main id="en" lang="en" hidden>
-    <header class="hero">
-      <span class="eyebrow">Case study · Al-Khair Real Estate</span>
-      <h1>A real estate office that answers every lead, on every channel, in seconds</h1>
-      <p class="lede">A complete system built for a real estate agency: a listing is entered once and published automatically to the website, Facebook and Telegram, while an AI assistant answers clients on WhatsApp, Messenger, Facebook comments and a Telegram bot.</p>
-      <div class="facts">
-        <span class="fact"><b>4</b> channels, one assistant</span>
-        <span class="fact">A listing posted <b>every hour</b>, 9 am to 10 pm</span>
-        <span class="fact"><b>6</b> recurring auto-posts</span>
-        <span class="fact"><b>763</b> comments answered automatically</span>
-      </div>
-    </header>
-
-    <section>
-      <h2>The problem</h2>
-      <div class="pain">
-        <div>Messages arrive on WhatsApp, Facebook, Messenger and Telegram, and the team can't keep up.</div>
-        <div>A client left waiting for hours goes to the next agency.</div>
-        <div>Every listing has to be written and posted by hand on each platform.</div>
-      </div>
-    </section>
-
-    <section>
-      <h2>How the pieces connect</h2>
-      <div class="map">
-        <div class="col">
-          <div class="chip">WhatsApp<small>Welcome, answers, updates for property owners</small></div>
-          <div class="chip">Facebook &amp; Messenger<small>A reply to every comment and message</small></div>
-          <div class="chip">Telegram bot<small>Browse by buttons or free text</small></div>
-        </div>
-        <div class="arrow" aria-hidden="true">⇄</div>
-        <div class="core"><b>One listings database</b><span>and one AI assistant that understands free text and searches real listings</span></div>
-      </div>
-      <div class="map" style="margin-top:14px">
-        <div class="col">
-          <div class="chip">Website<small>Filters, a page per listing, "List your property" form</small></div>
-          <div class="chip">Admin panel<small>Listings, requests, posting schedule, stats</small></div>
-        </div>
-        <div class="arrow" aria-hidden="true">⇄</div>
-        <div class="col">
-          <div class="chip">Facebook page &amp; Telegram channel<small>Auto-posting, and "Sold" added when a listing closes</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>What it does</h2>
-      <div class="feat">
-        <div><h3>Instant comment replies</h3><p>Anyone who comments "price" gets the price, details and link in a private message, and the comments lift the post's reach.</p></div>
-        <div><h3>An assistant in the client's dialect</h3><p>It understands "2-bedroom flat in this area", sends matching listings, and steps back when a staff member replies.</p></div>
-        <div><h3>"Notify me"</h3><p>When nothing matches, it saves the request and messages the client as soon as a fitting listing goes live.</p></div>
-        <div><h3>Property owners</h3><p>A form to submit a property, WhatsApp confirmation, and automatic updates when it's approved, reserved or sold.</p></div>
-        <div><h3>A weekly content calendar</h3><p>Latest listings, featured listings, "What your budget gets", prices by area, and tips, all posted automatically.</p></div>
-        <div><h3>Measurement</h3><p>Website visitors, bot users and channel followers, with tagged links from Facebook.</p></div>
-      </div>
-      <div class="convo" aria-label="Example conversation">
-        <div class="msg in"><span class="who">Client · WhatsApp · 11:40 pm</span>Looking for a furnished 2-bedroom to rent, what do you have?</div>
-        <div class="msg out"><span class="who">Assistant · seconds later</span>We have 3 matching listings. Here's the first: 2 bedrooms and a living room, furnished, 3rd floor. Shall I send the photos?</div>
-      </div>
-      <p class="note" style="margin-top:8px">Illustrative example of a reply.</p>
-    </section>
-
-    <section>
-      <h2>It's running right now</h2>
-      <p>This is Al-Khair Real Estate in Latakia, my own agency project, running the full system. The numbers come straight from its admin panel.</p>
-      <video controls preload="metadata" playsinline poster="img/promo-poster.jpg"><source src="promo.mp4" type="video/mp4"></video>
-      <div class="proof">
-        <div class="stat"><b>763</b><span>Facebook comments answered by the bot</span></div>
-        <div class="stat"><b>69</b><span>Messenger chats handled by the assistant</span></div>
-        <div class="stat"><b>366</b><span>website visitors in 30 days</span></div>
-                <div class="stat"><b>74%</b><span>of visitors come from Facebook</span></div>
-        <div class="stat"><b>15</b><span>Telegram bot users</span></div>
-        <div class="stat"><b>224</b><span>bot messages and button taps</span></div>
-        <div class="stat"><b>41</b><span>listings, published automatically</span></div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Inside the system</h2>
-      <div class="shots">
-        <figure><a href="img/public-home.webp" class="zoom"><img src="img/public-home.webp" alt="Website: every listing in one place, with filters and an AI assistant" loading="lazy" width="1895" height="910"></a><figcaption>Website: every listing in one place, with filters and an AI assistant</figcaption></figure>
-        <figure><a href="img/public-listings.webp" class="zoom"><img src="img/public-listings.webp" alt="A card per listing with call, WhatsApp and share buttons" loading="lazy" width="1895" height="910"></a><figcaption>A card per listing with call, WhatsApp and share buttons</figcaption></figure>
-        <figure><a href="img/admin-listings.webp" class="zoom"><img src="img/admin-listings.webp" alt="Admin panel: 41 listings in one table" loading="lazy" width="1895" height="910"></a><figcaption>Admin panel: 41 listings in one table</figcaption></figure>
-        <figure><a href="img/admin-posting.webp" class="zoom"><img src="img/admin-posting.webp" alt="Posting schedule: one listing every hour, 9 am to 10 pm" loading="lazy" width="1895" height="910"></a><figcaption>Posting schedule: one listing every hour, 9 am to 10 pm</figcaption></figure>
-        <figure><a href="img/admin-posting-2.webp" class="zoom"><img src="img/admin-posting-2.webp" alt="Ready-made weekly posts that publish themselves" loading="lazy" width="1895" height="910"></a><figcaption>Ready-made weekly posts that publish themselves</figcaption></figure>
-        <figure><a href="img/admin-visitors.webp" class="zoom"><img src="img/admin-visitors.webp" alt="Visitors: 366 in the last 30 days" loading="lazy" width="1895" height="910"></a><figcaption>Visitors: 366 in the last 30 days</figcaption></figure>
-        <figure><a href="img/admin-visitors-2.webp" class="zoom"><img src="img/admin-visitors-2.webp" alt="Where visitors come from, and the most viewed listings" loading="lazy" width="1895" height="910"></a><figcaption>Where visitors come from, and the most viewed listings</figcaption></figure>
-        <figure><a href="img/admin-telegram.webp" class="zoom"><img src="img/admin-telegram.webp" alt="Telegram bot: 15 users and 224 interactions" loading="lazy" width="1895" height="910"></a><figcaption>Telegram bot: 15 users and 224 interactions</figcaption></figure>
-        <figure><a href="img/admin-notify-requests.webp" class="zoom"><img src="img/admin-notify-requests.webp" alt=""Notify me" requests the bot follows up on its own" loading="lazy" width="1895" height="910"></a><figcaption>"Notify me" requests the bot follows up on its own</figcaption></figure>
-      </div>
-    </section>
-
-    <section>
-      <h2>How we work together</h2>
-      <ol class="steps">
-        <li>A 15-minute call to understand your office and channels.</li>
-        <li>I set the system up with your name, logo and your clients' language, in 1 to 2 weeks.</li>
-        <li>A trial week with your team, plus adjustments.</li>
-        <li>Monthly maintenance, hosting and ongoing improvements.</li>
-      </ol>
-    </section>
-
-    <section class="about">
-      <h2>About me</h2>
-      <p>Software engineer specialising in software engineering and information systems. I build automation and AI systems with n8n, Laravel and React, connected to WhatsApp, Facebook and Telegram.</p>
-    </section>
-
-    <div class="contact">
-      <h2>Want the same system for your agency?</h2>
-      <p class="line">Hamza Othman · <a href="https://wa.me/963937961072" target="_blank" rel="noopener">WhatsApp +963 937 961 072</a> · <a href="mailto:hamza.othman554@gmail.com">hamza.othman554@gmail.com</a></p>
-      <p class="note">Send a message and we'll book a short call to show you the system running.</p>
-    </div>
-  </main>
+<div class="bar" dir="ltr"><span class="mark">Hamza Othman · AI Automation</span>
+<nav class="lang" aria-label="Language"><a href="#ar" id="l-ar">العربية</a><a href="#en" id="l-en">English</a></nav></div>
+<main id="ar" lang="ar">
+<header class="hero">
+<span class="eyebrow">حمزة عثمان · مهندس برمجيات</span>
+<h1>أنظمة ذكاء اصطناعي وأتمتة بترد على زباينك وبتشتغل عنك</h1>
+<p class="lede">ببني لأصحاب الأعمال مساعدات ذكية وأتمتة بـ n8n، مربوطة بواتساب وفيسبوك وتيليغرام وموقعك. الهدف: ولا زبون يستنى، ولا شغلة تتكرر بإيد.</p>
+<div class="facts"><span class="fact"><b>763</b> تعليق انرد عليه تلقائياً</span><span class="fact"><b>69</b> محادثة مسنجر</span><span class="fact"><b>4</b> قنوات بمساعد واحد</span></div>
+</header>
+<section><h2>شو بقدر ابنيلك</h2><div class="svc"><div><span class="ic" aria-hidden="true">💬</span><h3>مساعد ذكي بيرد على الزباين</h3><p>على واتساب وماسنجر وتيليغرام وتعليقات فيسبوك، بلهجة الزبون، وبيدوّر بمعلوماتك الحقيقية.</p></div>
+<div><span class="ic" aria-hidden="true">📣</span><h3>نشر تلقائي ومحتوى أسبوعي</h3><p>منتجاتك أو عروضك بتنزل لحالها على صفحاتك وقنواتك بجدول، مع منشورات دورية جاهزة.</p></div>
+<div><span class="ic" aria-hidden="true">🎯</span><h3>التقاط العملاء ومتابعتهم</h3><p>كل استفسار بينحفظ، وبينبعت للموظف المناسب، والزبون بيوصلو تذكير أو خبر لما يصير في جديد.</p></div>
+<div><span class="ic" aria-hidden="true">🔗</span><h3>ربط الأنظمة بـ n8n</h3><p>Google Sheets، CRM، فواتير، إيميل، تقارير يومية. أي شغل بيتكرر بإيد، بيصير لحالو.</p></div>
+<div><span class="ic" aria-hidden="true">🖥️</span><h3>موقع ولوحة إدارة</h3><p>موقع سريع بفلاتر، ولوحة بتشوف فيها كل شي: الطلبات، الزوار، النشر، الأرقام.</p></div>
+<div><span class="ic" aria-hidden="true">🔔</span><h3>«خبّرني» والتنبيهات</h3><p>الزبون بيطلب شي مو موجود، والنظام بيبعتلو أول ما يتوفر، بدون ما حدا يتذكر.</p></div></div></section>
+<section><h2>دراسة حالة</h2>
+<a class="case" href="real-estate/#ar"><div style="display:grid;gap:8px"><span class="eyebrow">الخير للأعمال العقارية · اللاذقية</span><h3 style="font-size:21px">مكتب عقاري بيرد على كل زبون، على كل منصة، بثواني</h3>
+<div class="mini"><span class="fact"><b>763</b> تعليق</span><span class="fact"><b>366</b> زائر/شهر</span><span class="fact"><b>41</b> عرض</span></div>
+<span class="go">شوف كيف بيشتغل، مع فيديو ←</span></div><img src="img/admin-facebook.webp" alt="" loading="lazy" width="1895" height="910"></a></section>
+<section><h2>أتمتة سريعة بسعر ثابت</h2><p class="note" style="margin-bottom:14px">بتنسلّم خلال 3 لـ 7 أيام. والمشاريع الأكبر بسعر حسب الطلب.</p><div class="price"><div><b>$150</b><h3>فورم ← Google Sheets ← إشعار</h3><p>كل طلب من موقعك بينحفظ وبيوصلك إشعار عالواتساب أو الإيميل.</p></div>
+<div><b>$150</b><h3>تقرير يومي أوتوماتيكي</h3><p>مبيعات، طلبات، أو أرقام إعلانات، بتوصلك كل يوم بإيميل مرتّب.</p></div>
+<div><b>$200</b><h3>نشر تلقائي من جدول</h3><p>بتكتب المنشورات بجدول، وبتنزل لحالها على فيسبوك وإنستغرام وتيليغرام.</p></div>
+<div><b>$250</b><h3>بوت رد على الزباين</h3><p>رد فوري على الأسئلة المتكررة بالواتساب أو المسنجر، بمعلومات محلّك.</p></div></div></section>
+<section><h2>القطاعات</h2><div class="ind"><div><b>مكاتب عقارية</b><span class=tag>شغّال ومجرّب</span><small>دراسة حالة كاملة تحت</small></div>
+<div><b>معارض سيارات</b><span class=tag>جاهز</span><small>نفس المحرك: عرض السيارات، الرد، النشر</small></div>
+<div><b>عيادات</b><small>حجز مواعيد، تذكير، رد على الأسئلة</small></div>
+<div><b>متاجر أونلاين</b><small>طلبات، حالة الشحن، رد على الزباين</small></div></div></section>
+<section><h2>كيف منشتغل</h2><ol class="steps">
+<li>مكالمة 15 دقيقة لنفهم شغلك ووين بيضيع الوقت.</li>
+<li>بقلّك شو رح ابني وقديش وبأي مدة، بشكل واضح.</li>
+<li>بركّب النظام وبجرّبو مع فريقك أسبوع.</li>
+<li>صيانة وتطوير شهري.</li></ol></section>
+<div class="contact"><h2>عندك شغل بيتكرر أو زباين عم تستنى؟</h2>
+<p class="line">حمزة عثمان · <a href="https://wa.me/963937961072" target="_blank" rel="noopener" dir="ltr">WhatsApp +963 937 961 072</a> · <a href="mailto:hamza.othman554@gmail.com">hamza.othman554@gmail.com</a></p>
+<p class="note">ابعت رسالة ومنحدد مكالمة قصيرة.</p></div>
+</main>
+<main id="en" lang="en" hidden>
+<header class="hero">
+<span class="eyebrow">Hamza Othman · Software engineer</span>
+<h1>AI and automation systems that answer your customers and do the busywork</h1>
+<p class="lede">I build AI assistants and n8n automations for businesses, connected to WhatsApp, Facebook, Telegram and your website. No customer left waiting, no task done twice by hand.</p>
+<div class="facts"><span class="fact"><b>763</b> comments answered automatically</span><span class="fact"><b>69</b> Messenger chats</span><span class="fact"><b>4</b> channels, one assistant</span></div>
+</header>
+<section><h2>What I build</h2><div class="svc"><div><span class="ic" aria-hidden="true">💬</span><h3>AI assistant that answers customers</h3><p>On WhatsApp, Messenger, Telegram and Facebook comments, in the customer's dialect, using your real data.</p></div>
+<div><span class="ic" aria-hidden="true">📣</span><h3>Auto-posting and a content calendar</h3><p>Your products or listings publish themselves to your pages and channels on a schedule.</p></div>
+<div><span class="ic" aria-hidden="true">🎯</span><h3>Lead capture and follow-up</h3><p>Every enquiry is saved and routed to the right person, and customers get reminders and updates automatically.</p></div>
+<div><span class="ic" aria-hidden="true">🔗</span><h3>Connecting your tools with n8n</h3><p>Sheets, CRM, invoices, email, daily reports. Any repetitive manual task, automated.</p></div>
+<div><span class="ic" aria-hidden="true">🖥️</span><h3>Website and admin panel</h3><p>A fast site with filters, and a dashboard for requests, visitors, posting and numbers.</p></div>
+<div><span class="ic" aria-hidden="true">🔔</span><h3>"Notify me" and alerts</h3><p>A customer asks for something you don't have yet, and the system messages them the moment it arrives.</p></div></div></section>
+<section><h2>Case study</h2>
+<a class="case" href="real-estate/#en"><div style="display:grid;gap:8px"><span class="eyebrow">Al-Khair Real Estate · Latakia</span><h3 style="font-size:21px">A real estate office that answers every lead in seconds</h3>
+<div class="mini"><span class="fact"><b>763</b> comments</span><span class="fact"><b>366</b> visitors/month</span><span class="fact"><b>41</b> listings</span></div>
+<span class="go">See how it works, with video →</span></div><img src="img/admin-facebook.webp" alt="" loading="lazy" width="1895" height="910"></a></section>
+<section><h2>Quick automations, fixed price</h2><p class="note" style="margin-bottom:14px">Delivered in 3 to 7 days. Bigger systems are quoted per project.</p><div class="price"><div><b>$150</b><h3>Form → Google Sheets → alert</h3><p>Every website enquiry saved and sent to you on WhatsApp or email.</p></div>
+<div><b>$150</b><h3>Automatic daily report</h3><p>Sales, orders or ad numbers in a clean email every morning.</p></div>
+<div><b>$200</b><h3>Auto-posting from a sheet</h3><p>Write posts in a sheet and they publish to Facebook, Instagram and Telegram.</p></div>
+<div><b>$250</b><h3>Customer reply bot</h3><p>Instant answers to common questions on WhatsApp or Messenger, using your info.</p></div></div></section>
+<section><h2>Industries</h2><div class="ind"><div><b>Real estate agencies</b><span class=tag>Live</span><small>Full case study below</small></div>
+<div><b>Car dealerships</b><span class=tag>Ready</span><small>Same engine: listings, replies, posting</small></div>
+<div><b>Clinics</b><small>Bookings, reminders, FAQs</small></div>
+<div><b>Online stores</b><small>Orders, shipping status, customer replies</small></div></div></section>
+<section><h2>How we work</h2><ol class="steps">
+<li>A 15-minute call to see where your time goes.</li>
+<li>A clear scope, price and timeline.</li>
+<li>I build it and test it with your team for a week.</li>
+<li>Monthly maintenance and improvements.</li></ol></section>
+<div class="contact"><h2>Repetitive work or customers waiting on replies?</h2>
+<p class="line">Hamza Othman · <a href="https://wa.me/963937961072" target="_blank" rel="noopener" dir="ltr">WhatsApp +963 937 961 072</a> · <a href="mailto:hamza.othman554@gmail.com">hamza.othman554@gmail.com</a></p>
+<p class="note">Send a message and we'll book a short call.</p></div>
+</main>
 </div>
-
 <script>
-(function(){
-  var ar=document.getElementById('ar'), en=document.getElementById('en');
-  var la=document.getElementById('l-ar'), le=document.getElementById('l-en');
-  function show(){
-    var isEn = location.hash === '#en';
-    en.hidden = !isEn; ar.hidden = isEn;
-    la.setAttribute('aria-current', String(!isEn));
-    le.setAttribute('aria-current', String(isEn));
-    document.documentElement.lang = isEn ? 'en' : 'ar';
-  }
-  window.addEventListener('hashchange', show);
-  show();
-})();
+(function(){var ar=document.getElementById('ar'),en=document.getElementById('en'),la=document.getElementById('l-ar'),le=document.getElementById('l-en');
+function show(){var e=location.hash==='#en';en.hidden=!e;ar.hidden=e;la.setAttribute('aria-current',String(!e));le.setAttribute('aria-current',String(e));document.documentElement.lang=e?'en':'ar';document.documentElement.dir=e?'ltr':'rtl';}
+window.addEventListener('hashchange',show);show();})();
 </script>
-<dialog class="lb" id="lb"><img alt=""><button type="button">✕</button></dialog>
-<script>
-(function(){
-  var d=document.getElementById('lb'), im=d.querySelector('img');
-  document.querySelectorAll('a.zoom').forEach(function(a){
-    a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;d.showModal();});
-  });
-  d.addEventListener('click',function(){d.close();});
-})();
-</script>
-
 </body>
 </html>
